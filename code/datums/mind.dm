@@ -61,7 +61,11 @@
 	var/datum/vampire/vampire			//vampire holder
 	var/datum/nations/nation			//nation holder
 	var/datum/abductor/abductor			//abductor holder
+<<<<<<< Updated upstream
 	var/faithscore = 0
+=======
+	var/faithpoints = 0 //chaplain mechanic resource
+>>>>>>> Stashed changes
 
 	var/antag_hud_icon_state = null //this mind's ANTAG_HUD should have this icon_state
 	var/datum/atom_hud/antag/antag_hud = null //this mind's antag HUD

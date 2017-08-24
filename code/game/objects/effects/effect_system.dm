@@ -249,6 +249,9 @@ steam.start() -- spawns the effect
 	pixel_x = -32
 	pixel_y = -32
 
+/obj/effect/effect/harmless_smoke/clear
+	opacity = 0
+
 /obj/effect/effect/harmless_smoke/New()
 	..()
 	spawn (100)

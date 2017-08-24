@@ -41,6 +41,7 @@
 	if(user.mind && (user.mind.assigned_role == "Chaplain"))
 		open_bible(user)
 	else
+<<<<<<< Updated upstream
 		to_chat(user, "<span class='warning'>The book remains stubbornly closed.")
 
 /obj/item/weapon/storage/bible/proc/open_bible(mob/user as mob)
