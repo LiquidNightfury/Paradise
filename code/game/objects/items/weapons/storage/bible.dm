@@ -60,9 +60,9 @@
 /obj/item/weapon/storage/bible/proc/place_blessing(mob/user)
 	var/turf/blessingloc = get_turf(user)
 	new /obj/effect/blessingframe(blessingloc)
+	to_chat(user, "<span class='warning'>You arrange the basic symbols of a sacred blessing.")
 
 /obj/item/weapon/storage/bible/proc/show_objectives(mob/user)
-
 /obj/item/weapon/storage/bible/proc/show_powers(mob/user)
 
 /obj/item/weapon/storage/bible/attack(mob/living/M as mob, mob/living/user as mob)
