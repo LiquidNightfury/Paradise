@@ -37,6 +37,34 @@
 				H.UpdateDamageIcon()
 	return
 
+/obj/item/weapon/storage/bible/attack_self(mob/user)
+	if(user.mind && (user.mind.assigned_role == "Chaplain"))
+		open_bible(user)
+	else
+		to_chat(user, "<span class='warning'>The book remains stubbornly closed.")
+
+/obj/item/weapon/storage/bible/proc/open_bible(mob/user as mob)
+	var/choice = alert(user,"You leaf through the pages...",,"Objectives","Place Blessing","Draw Power")
+	switch(choice)
+		if("Objectives")
+			show_objectives(user)
+		if("Place Blessing")
+			if(user.mind.faithscore < 5)
+				to_chat(user, "<span class='danger'>You don't have enough favor for this.")
+				return
+			else
+				place_blessing(user)
+		if("Draw Power")
+			show_powers(user)
+
+/obj/item/weapon/storage/bible/proc/place_blessing(mob/user)
+	var/turf/blessingloc = get_turf(user)
+	new /obj/effect/blessingframe(blessingloc)
+
+/obj/item/weapon/storage/bible/proc/show_objectives(mob/user)
+
+/obj/item/weapon/storage/bible/proc/show_powers(mob/user)
+
 /obj/item/weapon/storage/bible/attack(mob/living/M as mob, mob/living/user as mob)
 
 	var/chaplain = 0
